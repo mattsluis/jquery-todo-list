@@ -1,20 +1,22 @@
-#(document).ready(function() {
-$('#toDo').submit(function(e) {
-  e.preventDefault();
-  var todoInput= $('#text_0').val();
-  if (!todoInput) {   
-    alert('please enter texta into field');
-    return;
-  } else {
-    $('#lisCont').append('<li>' + todoInput + "<a href ='X'></a></li>");
-    // $(todoList).val('');
-    console.log(todoInput);
-    };
-)};
-$('li').on('click', "a", function(event) { //and using .on("click", ".childItemSelector", function() {}) to watch for behavior on newly appended items.
-  event.preventDefault();
-  $(this).parent().remove(); 
-};
+$(document).ready(function() {
+  $('#toDo').submit(function(e) {
+    e.preventDefault();
+    var todoInput = $('#text_0').val();
+    if (!todoInput) {   
+      alert('please enter text into field');
+      return;
+    } else {
+      var html = '<li>' + todoInput + "<a href ='X'></a></li>";
+      $('#lisCont').append(html);
+      console.log(todoInput);
+    }
+  });
+});
+// $('li').on('click', "a", function(event) { //and using .on("click", ".childItemSelector", function() {}) to watch for behavior on newly appended items.
+//   event.preventDefault();
+//   $(this).parent().remove(); 
+// )};
+
 
 
 
